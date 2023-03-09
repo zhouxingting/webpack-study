@@ -145,6 +145,9 @@ const config: webpack.Configuration = {
     minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify("!!!!"),
+    }),
     new HtmlWebpackPlugin({
       // 模板 html
       template: path.resolve(__dirname, "public/index.html"),
